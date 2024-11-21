@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string name="search_hint">Search ...</string>
+    <string name="active_status">Active</string>
+    <string name="passive_status">Passive</string>
+    <string name="close_hint">Clear search</string>
+    <string name="no_search_results">Oops, there aren't any satellites for your search query.</string>
+</resources>

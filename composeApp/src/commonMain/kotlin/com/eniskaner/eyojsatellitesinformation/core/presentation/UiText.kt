@@ -1,4 +1,4 @@
-package com.eniskaner.eyojsatellitesinformation.presentation
+package com.eniskaner.eyojsatellitesinformation.core.presentation
 
 import androidx.compose.runtime.Composable
 import org.jetbrains.compose.resources.StringResource
