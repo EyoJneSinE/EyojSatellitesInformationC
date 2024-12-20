@@ -5,4 +5,18 @@
     <string name="passive_status">Passive</string>
     <string name="close_hint">Clear search</string>
     <string name="no_search_results">Oops, there aren't any satellites for your search query.</string>
+    <string name="height_and_mass">Height/Mass:</string>
+    <string name="cost">Cost:</string>
+    <string name="last_position">Last Position:</string>
+    <string name="position">(%s, %s)</string>
+    <string name="error_disk_full">Oops, it seems like your disk is full.</string>
+    <string name="error_unknown">Oops, something went wrong.</string>
+
+    <!-- Dynamic Placeholders -->
+    <string name="satellite_name_placeholder">%1$s</string>
+    <string name="launch_date_placeholder">%1$s</string>
+    <string name="height_mass_placeholder">%1$d / %2$d</string>
+    <string name="cost_placeholder">%1$,d</string>
+    <string name="last_position_placeholder">(%1$d , %2$d)</string>
+    <string name="last_position_placeholders">(%$.5f, %$.5f)</string>
 </resources>
