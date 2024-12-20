@@ -23,10 +23,8 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.eniskaner.eyojsatellitesinformation.core.presentation.DarkBlue
-import com.eniskaner.eyojsatellitesinformation.core.presentation.DesertWhite
 import com.eniskaner.eyojsatellitesinformation.core.presentation.LightGray
-import com.eniskaner.eyojsatellitesinformation.satellite.satellites.domain.SatelliteUIModel
+import com.eniskaner.eyojsatellitesinformation.satellite.satellites.domain.model.SatelliteUIModel
 import com.eniskaner.eyojsatellitesinformation.satellite.satellites.presentation.components.SatelliteList
 import com.eniskaner.eyojsatellitesinformation.satellite.satellites.presentation.components.SatelliteSearchBar
 import com.eniskaner.eyojsatellitesinformation.satellite.satellites.presentation.state.SatelliteListUIState
@@ -74,7 +72,8 @@ fun SatelliteListScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(LightGray)
-            .statusBarsPadding(),
+            .statusBarsPadding()
+            .padding(top = 40.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         SatelliteSearchBar(
@@ -88,7 +87,7 @@ fun SatelliteListScreen(
             modifier = Modifier
                 .widthIn(max = 400.dp)
                 .fillMaxWidth()
-                .padding(16.dp)
+                .padding(horizontal = 16.dp, vertical = 40.dp)
         )
 
         Surface(
@@ -109,19 +108,20 @@ fun SatelliteListScreen(
                         .fillMaxSize(),
                     contentAlignment = Alignment.Center
                 ) {
-                    if(state.isLoading) {
+                    if (state.isLoading) {
                         CircularProgressIndicator()
                     } else {
                         when {
                             state.error != null -> {
                                 Text(
-                                    text = state.error.asString(),
+                                    text = state.error,
                                     textAlign = TextAlign.Center,
                                     style = MaterialTheme.typography.headlineSmall,
                                     color = MaterialTheme.colorScheme.error
                                 )
                             }
-                            state.searchingSatelliteList.isEmpty() -> {
+
+                            state.searchingSatelliteList.isEmpty() && state.query.isNotEmpty() -> {
                                 Text(
                                     text = stringResource(Res.string.no_search_results),
                                     textAlign = TextAlign.Center,
@@ -129,6 +129,7 @@ fun SatelliteListScreen(
                                     color = MaterialTheme.colorScheme.error
                                 )
                             }
+
                             else -> {
                                 SatelliteList(
                                     satellites = state.searchingSatelliteList,

@@ -22,7 +22,6 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.intl.Locale
 import com.eniskaner.eyojsatellitesinformation.core.presentation.DarkBlue
 import com.eniskaner.eyojsatellitesinformation.core.presentation.DesertWhite
 import com.eniskaner.eyojsatellitesinformation.core.presentation.SandYellow
@@ -97,7 +96,6 @@ fun SatelliteSearchBar(
                     color = DesertWhite
                 )
                 .minimumInteractiveComponentSize()
-
         )
     }
 }
