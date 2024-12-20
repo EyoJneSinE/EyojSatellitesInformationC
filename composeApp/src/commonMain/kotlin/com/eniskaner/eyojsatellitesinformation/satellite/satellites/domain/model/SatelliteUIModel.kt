@@ -1,4 +1,4 @@
-package com.eniskaner.eyojsatellitesinformation.satellite.satellites.domain
+package com.eniskaner.eyojsatellitesinformation.satellite.satellites.domain.model
 
 data class SatelliteUIModel(
     val id: Int,
